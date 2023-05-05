@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.form1{
+    margin-top: 150px;
+    color: white;
+    padding: 20px 10px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+    border: 5px solid #00BFA6;
+    animation: animat 3s linear infinite;
+    box-shadow: 0 0 100px 2px #00BFA6;
+}
+.form1:hover{
+    border: 5px solid #fff
+}
+@keyframes animat{
+0% {
+border-color: #00BFA6;
+}
+50%{
+border-color: #038574;
+}
+100%{
+border-color: #00BFA6;
+}
+}
+
+.input{
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+}
+.botao {
+height: 50px;
+text-align: center;
+ background-color: #00BFA6;
+ padding: 15px 40px 10px;
+ color: #fff;
+ margin: 0px 0px 3px 0px;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor: pointer;
+ border-radius: 10px;
+ border: 2px dashed #00BFA6;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ transition: .4s;
+}
+
+.botao span:last-child {
+ display: none;
+}
+
+.botao:hover {
+ transition: .4s;
+ border: 2px dashed #00BFA6;
+ background-color: #fff;
+ color: #00BFA6;
+}
+
+.botao:active {
+ background-color: #87dbd0;
+}
+.checkbox{
+    position: relative;
+}
+h1{
+    padding-top: 20px;
+}  
+.limpar {
+  position: relative;
+  background-color: rgb(230, 34, 77);
+  border-radius: 5px;
+  box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+  padding: 5px 5px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 70px;
+  height: 45px;
+  color: #fff;
+  border: none;
+  font-size: 10px;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.limpar::before {
+  content: "";
+  background-color: rgb(248, 50, 93);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 700ms ease-in-out;
+  display: inline-block;
+}
+
+.limpar:hover::before {
+  width: 100%;
+} 
+li{
+list-style: none;
+text-align: center;
+}
+</style>
+</head>
+<body>
+    <form class="form1" action="https://api.sheetmonkey.io/form/dbTBpebm6NUt9AAR2w2NWi" method="post">
+    <h1><font color=white>Formulário de interação</font></h1>
+    <p>
+    <label>Digite seu nome</label>
+    <br>
+    <input class="input" placeholder="Digite aqui" type="text" required="required" value="Nome" name="Nome">
+    </p>
+    <p>
+    <label>Digite seu CPF</label>
+    <br>
+    <input class="input" placeholder="Digite aqui" type="number" maxlength="9" required="required" value="00000000000" name="CPF" oninput="if(this.value.length > 11) this.value = this.value.slice(0, 11);">
+    </p>
+    <p>
+    <label>Digite seu Endereço</label>
+    <br>
+    <input class="input" placeholder="Digite aqui" type="text" required="required" value="Rua e n°" name="Rua">
+    </p>
+    <p>
+    <label>Digite seu Bairro</label>
+    <br>
+    <input class="input" placeholder="Digite aqui" type="text" required="required" value="Bairro" name="Bairro">
+    </p>
+    <p>
+    <label>Digite sua Cidade</label>
+    <br>
+    <input class="input" placeholder="Digite aqui" type="text" required="required" value="Santo André" name="Cidade">
+    </p>
+    <p>
+        <label>Entre com a sua mensagem</label><br>
+        <textarea rows="5" cols="40" maxlength="300" name="mensagem inserida pelo usuário"
+        required="required" placeholder="Digite até 300 caracteres"></textarea>
+    </p>
+    <br>
+    <p>
+    <!---checkbox-->
+    <label class="checkbox">Escolha o(s) modelo(s) de trabalho</label><br>
+    <ol>
+        <li><input type="checkbox" value="Opc1" name="vlr_presencial">Presencial</li>
+        <li><input type="checkbox" value="Opc2" name="vlr_remoto">Remoto</li>
+        <li><input type="checkbox" checked="checked" value="Opc3" name="vlr_hibrido">Hibrido</li>
+    </ol>
+   </p>
+    <button class="botao" type="submit">Enviar dados</button>
+    <button class="limpar" type="reset">Limpar</button>
+    </form>
+
+</body>
+</html>
